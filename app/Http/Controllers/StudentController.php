@@ -50,18 +50,20 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function age($age)
+    public function age($id)
     {
         //
-       
-        return view("new2");
+       $students=$this->get_students1();
+       $result=$students[$id];
+        return view("new2",compact("age"));
 
     }
     public function date($id)
     {
         //
         $students=$this->get_students2();
-        return view("new3",["date"=>$students[$id]]);
+        return view("new3")->with("date",$students[$id]);
+
 
     }
 
