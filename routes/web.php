@@ -17,8 +17,11 @@ Route::get('/test', function () {
     return view('new');
 });
 Route::get('/post/{id}',"StudentController@name_of_student");
-Route::get('/post1/{id}',"StudentController@age");
+Route::get('/student/{age}',function($age){
+  return view('new2',compact('age'));
+});
+
 Route::get('/post2/{id}',"StudentController@date");
 
-
+ 
 
